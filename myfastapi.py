@@ -87,6 +87,7 @@ def feature_importance(sk_id_cust: int):
     plt.savefig(img,format='png')
     # Seek the beginning of the file (lire le contenu depuis le début.)
     img.seek(0)
+    
     # Return the image in the response
     return Response(content=img.getvalue(), media_type="image/png")
 
