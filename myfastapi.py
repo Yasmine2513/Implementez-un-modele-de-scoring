@@ -26,7 +26,7 @@ def get_root():
     return {'message': 'Welcome to the default payment risk prediction API'}
 
 # 4. Loading the trained model
-pickle_in = open("C:/Users/Yasmine/Desktop/FORMATION OCR DATA/P7/LightGBMmodel.pkl","rb")
+pickle_in = open("LightGBMmodel.pkl","rb")
 classifier=pickle.load(pickle_in)
 
 # 5. Expose the prediction functionality, make a prediction from the passed
