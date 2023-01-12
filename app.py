@@ -54,6 +54,7 @@ st.sidebar.image(logo, use_column_width=True)
 #######################################
     # SIDEBAR
 #######################################
+
 st.sidebar.subheader("About App")
 st.sidebar.info("Cette application Web vous aide à prédire le risque de défaut de paiement d'un prêt bancaire contracté par un client, et donc vous aide dans la prise de décision. Le model utilisé est LightGBM. C'est un outil utilisé en apprentissage automatique permettant de créer des modèles prédictifs à partir de données en utilisant des algorithmes d'arbres de décision et en les combinant de manière à améliorer les prédictions.")
 st.sidebar.title ("👤 Données client")
