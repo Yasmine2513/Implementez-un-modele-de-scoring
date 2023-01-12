@@ -9,7 +9,6 @@ from fastapi import FastAPI, HTTPException,  Request
 import pickle
 import pandas as pd
 import uvicorn
-import shap
 import json
 import io
 import matplotlib.pyplot as plt
