@@ -66,30 +66,6 @@ def get_prediction(sk_id_cust: int):
         'prediction_explanation': prediction_explanation
     }
 
-@app.get("/feature_importance/{sk_id_cust}")
-def feature_importance(sk_id_cust: int):
-    
-    # get customer id using their id as row index
-    data_cust = X.loc[sk_id_cust:sk_id_cust]
-    
-    # Ensure data_cust is a DataFrame with a single row
-    if not isinstance(data_cust, pd.DataFrame) or data_cust.shape[0] != 1:
-        raise ValueError("Invalid customer data")
-    
-    # Calculate the SHAP values for the data
-    explainer = shap.TreeExplainer(classifier)
-    shap_values = explainer.shap_values(data_cust)
-
-    # Create a SHAP summary plot
-    shap.summary_plot(shap_values, data_cust)
-    # Save the plot to a BytesIO object
-    img = io.BytesIO()
-    plt.savefig(img,format='png')
-    # Seek the beginning of the file (lire le contenu depuis le début.)
-    img.seek(0)
-    
-    # Return the image in the response
-    return Response(content=img.getvalue(), media_type="image/png")
 
 if __name__ == '__main__':
     uvicorn.run(app)
