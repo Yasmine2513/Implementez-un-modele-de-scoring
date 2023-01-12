@@ -1,0 +1,96 @@
+"""
+Created on Dec 2022
+@author: Yasmine UNEAU
+"""
+
+# 1. Library imports
+
+from fastapi import FastAPI, HTTPException,  Request
+import pickle
+import pandas as pd
+import uvicorn
+import shap
+import json
+import io
+import matplotlib.pyplot as plt
+from starlette.responses import Response
+
+# 2. Data import
+X = pd.read_csv("x_test1.csv",index_col= ['SK_ID_CURR'], encoding ='utf-8')
+
+
+# 3. Create the app object
+app = FastAPI(title="Default payment risk prediction API", description="API for default payment risk prediction using Lightgbm machine learning model")
+
+@app.get('/')
+def get_root():
+    return {'message': 'Welcome to the default payment risk prediction API'}
+
+# 4. Loading the trained model
+pickle_in = open("C:/Users/Yasmine/Desktop/FORMATION OCR DATA/P7/LightGBMmodel.pkl","rb")
+classifier=pickle.load(pickle_in)
+
+# 5. Expose the prediction functionality, make a prediction from the passed
+#    JSON data and return the predicted payment risk
+
+""" 
+Get customer id from test file 
+"""
+@app.get("/customer/{sk_id_cust}")
+def get_customer_id(sk_id_cust:int):
+    return sk_id_cust
+
+""" 
+Get default payment risk prediction from test file 
+"""
+@app.get("/prediction")
+def get_prediction(sk_id_cust: int):     
+    # get customer id using their id as row index
+    X_cust = X.loc[sk_id_cust: sk_id_cust]
+    
+    # get prediction , O for no risk and 1 for risk 
+    score_cust = classifier.predict(X_cust)[0]
+
+    # Return the prediction as a JSON dictionary
+    if(not(sk_id_cust)):
+        raise HTTPException(status_code=400, 
+                            detail = "Please Provide a valid data")
+
+    if (score_cust == 0):
+        prediction_explanation = "No payment default risk : LOAN GRANTED"
+    else:
+        prediction_explanation = "Payment default risk : LOAN REJECTED" 
+    
+    return {
+        'prediction': score_cust,
+        'prediction_explanation': prediction_explanation
+    }
+
+@app.get("/feature_importance/{sk_id_cust}")
+def feature_importance(sk_id_cust: int):
+    
+    # get customer id using their id as row index
+    data_cust = X.loc[sk_id_cust:sk_id_cust]
+    
+    # Ensure data_cust is a DataFrame with a single row
+    if not isinstance(data_cust, pd.DataFrame) or data_cust.shape[0] != 1:
+        raise ValueError("Invalid customer data")
+    
+    # Calculate the SHAP values for the data
+    explainer = shap.TreeExplainer(classifier)
+    shap_values = explainer.shap_values(data_cust)
+
+    # Create a SHAP summary plot
+    shap.summary_plot(shap_values, data_cust)
+    # Save the plot to a BytesIO object
+    img = io.BytesIO()
+    plt.savefig(img,format='png')
+    # Seek the beginning of the file (lire le contenu depuis le début.)
+    img.seek(0)
+    # Return the image in the response
+    return Response(content=img.getvalue(), media_type="image/png")
+
+if __name__ == '__main__':
+    uvicorn.run(app)
+
+
