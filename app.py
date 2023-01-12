@@ -24,7 +24,6 @@ st.set_page_config(page_title='Prêt à dépenser : Application Web de predictio
 
 #Import Data
 data = pd.read_csv(open('x_test1.csv'), encoding ='utf-8')
-target = pd.read_csv(open('y_test.csv'), encoding ='utf-8')
 dataset = pd.read_csv(open("df.csv"),index_col =0, encoding ='utf-8')
 data_mdl = pd.read_csv(open('x_test1.csv'),index_col =0, encoding ='utf-8')
 description_df = pd.read_csv(open('HomeCredit_columns_description.csv'),index_col ='Row', encoding ='utf-8')
@@ -32,7 +31,7 @@ description_df = description_df['Description']
 
 
 #Loading the trained model
-pickle_in = open("C:/Users/Yasmine/Desktop/FORMATION OCR DATA/P7/LightGBMmodel.pkl","rb")
+pickle_in = open("LightGBMmodel.pkl","rb")
 classifier=pickle.load(pickle_in)
 
 #Create a function to get predict_probability
