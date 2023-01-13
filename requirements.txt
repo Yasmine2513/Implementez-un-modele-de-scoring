@@ -48,7 +48,7 @@ mccabe==0.6.1
 mpmath==1.2.1
 munkres==1.1.4
 mypy-extensions==0.4.3
-numpy==1.24.0
+numpy==1.22.0
 oauthlib==3.2.2
 opencv-contrib-python==4.5.1.48
 opencv-python==4.6.0.66
