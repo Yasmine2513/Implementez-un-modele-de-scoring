@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 from starlette.responses import Response
 
 # 2. Data import
-X = pd.read_csv("x_test1.csv",index_col= ['SK_ID_CURR'], encoding ='utf-8')
+X = pd.read_csv("df_sample.csv",index_col= ['SK_ID_CURR'], encoding ='utf-8')
 
 
 # 3. Create the app object
