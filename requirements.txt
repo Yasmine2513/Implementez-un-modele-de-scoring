@@ -14,10 +14,6 @@ brotlipy==0.7.0
 cachetools==5.2.0
 commonmark==0.9.1
 comtypes==1.1.10
-conda==22.11.1
-conda-build==3.23.3
-conda-repo-cli==1.0.24
-conda-verify==3.4.2
 constantly==15.1.0
 cssselect==1.1.0
 daal4py==2021.6.0
