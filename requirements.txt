@@ -42,6 +42,7 @@ scikit-plot
 scipy
 shap
 starlette
+streamlit
 statsmodels
 tables
 TBB
