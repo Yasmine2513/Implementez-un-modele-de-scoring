@@ -1,9 +1,4 @@
 clyent
-commonmark
-comtypes
-constantly
-cssselect
-daal4py
 et-xmlfile
 fastapi
 flatbuffers
