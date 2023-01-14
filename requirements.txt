@@ -1,7 +1,5 @@
 absl-py
 altair
-anaconda-client
-anaconda-navigator
 appdirs
 astunparse
 atomicwrites
