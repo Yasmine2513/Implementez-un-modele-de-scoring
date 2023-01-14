@@ -23,9 +23,9 @@ st.set_page_config(page_title='Prêt à dépenser : Application Web de predictio
 #st.set_page_config(layout = 'wide')
 
 #Import Data
-data = pd.read_csv('df_sample.csv', encoding ='cp1252')
-dataset = pd.read_csv("df_complet_sample.csv",index_col = 0, encoding ='cp1252')
-data_mdl = pd.read_csv(open('df_sample.csv'),index_col =0, encoding ='cp1252')
+data = pd.read_csv('df_sample.csv', encoding ='utf-8')
+dataset = pd.read_csv("df_complet_sample.csv",index_col = 0, encoding ='utf-8')
+data_mdl = pd.read_csv(open('df_sample.csv'),index_col =0, encoding ='utf-8')
 description_df = pd.read_csv(open('HomeCredit_columns_description.csv'),index_col ='Row', encoding ='cp1252')
 description_df = description_df['Description']
 
