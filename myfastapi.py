@@ -38,7 +38,8 @@ Get customer id from test file
 """
 @app.get("/customer/{sk_id_cust}")
 async def get_customer_id(sk_id_cust:int):
-    return {"id_client": sk_id_cust}
+    X_cust = X.loc[sk_id_cust: sk_id_cust]
+    return {"id_client": X_cust}
 
 """ 
 Get default payment risk prediction from test file 
