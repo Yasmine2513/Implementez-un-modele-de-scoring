@@ -35,8 +35,6 @@ libclang
 lightgbm
 llvmlite
 mccabe
-mkl-fft
-mkl-service
 mpmath
 munkres
 mypy-extensions
