@@ -2,6 +2,7 @@ fastapi
 gitdb
 GitPython
 grpcio
+gunicorn
 hyperopt
 imbalanced-learn
 inflection
