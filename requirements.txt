@@ -1,16 +1,3 @@
-absl-py
-altair
-appdirs
-astunparse
-atomicwrites
-backports.weakref
-bkcharts
-blinker
-boto3
-botocore
-branca
-brotlipy
-cachetools
 clyent
 commonmark
 comtypes
@@ -25,7 +12,6 @@ gast
 gitdb
 GitPython
 grpcio
-h11
 hyperopt
 imbalanced-learn
 inflection
@@ -45,7 +31,6 @@ openpyxl
 opt-einsum
 patsy
 pep8
-Pillow
 plotly
 plotly-express
 protobuf
@@ -61,9 +46,6 @@ Pympler
 pytest
 python-lsp-jsonrpc
 python-lsp-server
-pytorch-nlp
-pytorch-pretrained-bert
-pytz-deprecation-shim
 PyYAML
 queuelib
 requests-oauthlib
@@ -74,8 +56,6 @@ scikit-learn-intelex
 scikit-plot
 scipy
 semver
-sentence-transformers
-sentencepiece
 shap
 sip
 slicer
@@ -86,15 +66,9 @@ statsmodels
 streamlit
 tables
 TBB
-termcolor
-tzdata
-tzlocal
 uvicorn
 validators
 webencodings
 win-unicode-console
 wincertstore
 wordcloud
-xgboost
-zict
-
