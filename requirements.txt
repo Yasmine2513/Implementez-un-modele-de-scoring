@@ -64,7 +64,6 @@ python-lsp-server
 pytorch-nlp
 pytorch-pretrained-bert
 pytz-deprecation-shim
-pywin32
 PyYAML
 queuelib
 requests-oauthlib
