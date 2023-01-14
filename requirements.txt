@@ -1,9 +1,4 @@
-clyent
-et-xmlfile
 fastapi
-flatbuffers
-fonttools
-gast
 gitdb
 GitPython
 grpcio
@@ -15,10 +10,6 @@ joblib
 libclang
 lightgbm
 llvmlite
-mccabe
-mpmath
-munkres
-mypy-extensions
 oauthlib
 opencv-contrib-python
 opencv-python
@@ -44,21 +35,13 @@ python-lsp-server
 PyYAML
 queuelib
 requests-oauthlib
-rich
-rsa
 scikit-learn
 scikit-learn-intelex
 scikit-plot
 scipy
-semver
 shap
-sip
-slicer
-smart-open
-smmap
 starlette
 statsmodels
-streamlit
 tables
 TBB
 uvicorn
@@ -66,4 +49,3 @@ validators
 webencodings
 win-unicode-console
 wincertstore
-wordcloud
