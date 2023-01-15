@@ -26,7 +26,7 @@ st.set_page_config(page_title='Prêt à dépenser : Application Web de predictio
 data = pd.read_csv('df_sample.csv', encoding ='utf-8')
 dataset = pd.read_csv("df_complet_sample.csv",index_col = 0, encoding ='utf-8')
 data_mdl = pd.read_csv(open('df_sample.csv'),index_col =0, encoding ='utf-8')
-
+description_df = pd.read_csv('description_data.csv',index_col ='Row')
 
 
 
@@ -146,6 +146,12 @@ def client():
            # Display the plot in the Streamlit app
            st.success(f"Voici le détail de l'importance de chaque variable pour ce client :")
            st.plotly_chart(fig)
+        
+    # Create checkbox for features description
+    if st.checkbox("Avez vous bedoin de mieux comprendre la description de chaque variable ?") :
+        list_features = description_df.index.to_list()
+        feature = st.selectbox('Liste des variable', list_features)
+        st.table(description_df.loc[description_df.index == feature])
 
     
         
