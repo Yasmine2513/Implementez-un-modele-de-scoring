@@ -20,6 +20,7 @@ GitPython==3.1.29
 gunicorn
 h11==0.14.0
 idna==3.4
+ipython
 importlib-metadata==5.2.0
 Jinja2==3.1.2
 joblib==1.2.0
