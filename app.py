@@ -40,7 +40,7 @@ def load_prediction(data_mdl, id, classifier):
     return score
 
 
-st.warning('👈 Veuillez Saisir un ID client !')
+st.warning('👈 Veuillez sélectionner un ID client !')
 
 #Define logo
 logo = Image.open('logo.jpg')
