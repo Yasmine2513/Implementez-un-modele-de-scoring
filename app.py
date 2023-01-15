@@ -29,6 +29,7 @@ data_mdl = pd.read_csv(open('df_sample.csv'),index_col =0, encoding ='utf-8')
 
 
 
+
 #Loading the trained model
 pickle_in = open("LightGBMmodel.pkl","rb")
 classifier=pickle.load(pickle_in)
