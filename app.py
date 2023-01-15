@@ -148,7 +148,7 @@ def client():
            st.plotly_chart(fig)
         
     # Create checkbox for features description
-    if st.checkbox("Avez vous bedoin de mieux comprendre la description de chaque variable ?") :
+    if st.checkbox("Avez vous besoin de mieux comprendre la description de chaque variable ?") :
         list_features = description_df.index.to_list()
         feature = st.selectbox('Liste des variable', list_features)
         st.table(description_df.loc[description_df.index == feature])
