@@ -56,9 +56,7 @@ Il est important de noter que le fichier requirements.txt doit être mis à jour
 
 - Le dashboard a été deployé sur Streamlit Share
 Vous devez d'abord créer un compte Streamlit et installer l'outil de ligne de commande Streamlit. Ensuite, vous pouvez utiliser la commande streamlit login pour vous connecter à votre compte Streamlit.
-
 Une fois connecté, vous pouvez utiliser la commande streamlit run nom_de_votre_fichier.py pour lancer votre application en local. Si tout fonctionne comme prévu, vous pouvez utiliser la commande streamlit share pour déployer votre application sur Streamlit Share. Il vous sera demandé de choisir un nom d'utilisateur pour votre déploiement et de créer un lien partageable pour votre application.
-
 Il est important de noter que toutes les dépendances doivent être correctement installées sur votre ordinateur local et doivent être spécifiées dans le fichier requirements.txt pour que le déploiement sur Streamlit Share fonctionne correctement. Il est également recommandé de vérifier les logs de l'application pour détecter d'éventuelles erreurs lors du déploiement.
 ## Auteur
 
