@@ -93,7 +93,7 @@ def client():
         st.write("Sur ce scatterplot, bougez la souris pour localiser le client séléctionné. Cela vous permettra d'avoir son âge et le mantant de ses crédits.")
         #Create scatterplot to show client data and locate selected client
         fig = px.scatter(other_data, x='AMT_CREDIT', y='AGE')
-        fig.add_trace(go.Scatter(x=client_data['AMT_CREDIT'], y=client_data['AGE'],mode="markers", name="Client séléctionné"))
+        fig.add_trace(go.Scatter(x=client_data['AMT_CREDIT'], y=client_data['AGE'],mode="markers", name="Client séléctionné", marker=dict(color="red")))
         st.plotly_chart(fig)
         
         
